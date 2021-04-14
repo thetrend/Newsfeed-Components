@@ -127,12 +127,17 @@ const articleMaker = (article) => {
   span.classList.add('expandButton');
   span.textContent = '+';
 
+  span.addEventListener('click', () => {
+    container.classList.toggle('article-open');
+  });
+
   container.appendChild(h2);
   container.appendChild(pDate);
   container.appendChild(p1);
   container.appendChild(p2);
   container.appendChild(p3);
   container.appendChild(span);
+
   return container;
 }
 /*
