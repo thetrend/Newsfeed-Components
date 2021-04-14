@@ -121,7 +121,7 @@ const articleMaker = (article) => {
   p2.textContent = article.secondParagraph;
 
   const p3 = document.createElement('p');
-  p2.textContent = article.thirdParagraph;
+  p3.textContent = article.thirdParagraph;
 
   const span = document.createElement('span');
   span.classList.add('expandButton');
@@ -149,6 +149,18 @@ const articleMaker = (article) => {
 }
 
 /*
+  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
+  Refresh the page to see the new article.
+*/
+data.push({
+  title: 'Three little kitties',
+  date: 'Apr 13th, 2021',
+  firstParagraph: `Otto is a champion black and white tuxedo kitty. He loves his foot stool, his day bed, and his daily outside adventures on the patio.`,
+  secondParagraph: `Isis is a sweet little striped brown, gray, and white kitty. She is Mommy's mocha kitten. She loves her Delta blanket, Daddy's extra office chair just for her, and her sock basket that she uses for naps.`,
+  thirdParagraph: `Katie Cat is a darling little longhair kitty. She is brown and black but has no white like Isis. She loves her big beige couch, her window looks, and her under-the-stairs.`
+});
+
+/*
   Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
   to create a div.article element and append it to the DOM inside div.articles (see index.html).
 */
@@ -156,8 +168,3 @@ data.forEach(datum => {
   const obj = articleMaker(datum);
   return document.querySelector('.articles').appendChild(obj);
 });
-
-/*
-  Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
-  Refresh the page to see the new article.
-*/
